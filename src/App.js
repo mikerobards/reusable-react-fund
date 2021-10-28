@@ -1,8 +1,23 @@
+const Button = ({ onClick, children, ...props }) => {
+  return <button {...props} onClick={onClick}>{children}</button>
+}
+
 
 function App() {
   return (
     <div >
-      <h1>Hello World!</h1>
+      <Button onClick={() => {
+        console.log("I was clicked")
+      }}>
+
+        + Add
+      </Button>
+      <Button onClick={() => {
+        console.log("I was tapped!")
+      }}>
+        Subtract -
+      </Button>
+      <Button children="MULTIPLY *****" />
     </div>
   );
 }
