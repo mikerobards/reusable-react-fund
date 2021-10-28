@@ -1,24 +1,19 @@
-const Button = ({ onClick, children, ...props }) => {
-  return <button {...props} onClick={onClick}>{children}</button>
+const Badge = ({ children, color, ...props }) => {
+  return <span className={`badge ${color}`} {...props}>{children}</span>
 }
 
 
 function App() {
   return (
-    <div >
-      <Button onClick={() => {
-        console.log("I was clicked")
-      }}>
-
-        + Add
-      </Button>
-      <Button onClick={() => {
-        console.log("I was tapped!")
-      }}>
-        Subtract -
-      </Button>
-      <Button children="MULTIPLY *****" />
-    </div>
+    <section>
+      <h1>Check out these badges!</h1>
+      <Badge color="green">Success</Badge> This is operational. <br />
+      <Badge color="red">Removed</Badge> This is critical. <br />
+      <Badge color="yellow">Warning</Badge> This is a warning. <br />
+      <Badge color="blue" onClick={() => {
+        console.log('clicked!')
+      }}>Beta</Badge> This is in progress. <br />
+    </section>
   );
 }
 
